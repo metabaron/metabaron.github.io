@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <script src="Sortable.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>blah</title>
+  </head>
+  <body>
+
+    <p>Cars (drag and drop)
+      <div id="cars" title="cars" class="list-group">
+        <div style="background-color:#FFDB58" class="list-group-item">
+          <h3>Hertz</h3>
+          <p>From xx to yy. Date AA to BB.</p>
+	  <p>Price: <span class="badge">123</span></p>
+        </div>
+        <div style="background-color:#FF0000" class="list-group-item">
+          <h3>Avis</h3>
+          <p>From xx to yy. Date AA to BB.</p>
+	  <p>Price: <span class="badge">456</span></p>
+        </div>
+	<div style="background-color:#FFFF00" class="list-group-item">
+          <h3>Avis</h3>
+          <p>From xx to yy. Date AA to BB.</p>
+          <p>Price: <span class="badge">789</span></p>
+        </div>
+      </div>
+    </p>
+
+    <p>Planes (drag and drop)
+      <div id="planes" title="planes" class="list-group">
+	<div style="background-color:#82CAFF" class="list-group-item">
+	  <h3>Air France</h3>
+	  <p>From xx to yy. Date AA to BB.</p>
+	  <p>Price: <span class="badge">987</span></p>
+	</div>
+	<div style="background-color:#FBF6D9" class="list-group-item">
+	  <h3>Emirates</h3>
+	  <p>From xxto yy. Date AA to BB.</p>
+	  <p>Price: <span class="badge">654</span></p>
+	</div>
+	<div style="background-color:#82CAFF" class="list-group-item">
+          <h3>Air France</h3>
+          <p>From xx to yy. Date AA to BB.</p>
+          <p>Price: <span class="badge">321</span></p>
+        </div>
+      </div>
+    </p>
+
+    <p>Total pricing (updating with the update from the lists): <span id="Total" class="badge">0</span></p>
+
+    <script>
+
+      var el1 = document.getElementById('cars');
+      var el2 = document.getElementById('planes');
+
+      var temp = 0;
+      temp = parseFloat(document.getElementById("planes").getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML) + parseFloat(document.getElementById("cars").getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML);
+      document.getElementById('Total').innerHTML = temp;
+
+      var sortable1 = Sortable.create(el1,{
+      onEnd: function (/**Event*/evt){
+      var itemEl = evt.item;  // dragged HTMLElement
+      evt.to;    // target list
+      evt.from;  // previous list
+      evt.oldIndex;  // element's old index within old parent
+      evt.newIndex;  // element's new index within new parent
+      evt.clone; // the clone element
+      evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
+      //WORKS TO FIND PRICE FOR DRAGGED ELEMENT
+      //alert("Price for Car moved: " + evt.clone.getElementsByTagName("span").item(0).innerHTML);
+      //WORKS TO FIND PRICING OF FIRST ELEMENT      
+      //alert("Car price in first position: " + evt.to.getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML);
+      var temp = 0;
+      temp = parseFloat(document.getElementById("planes").getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML) + parseFloat(document.getElementById("cars").getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML);
+      document.getElementById('Total').innerHTML = temp;
+      }}
+      );
+
+      var sortable2 = Sortable.create(el2,{
+      onEnd: function (/**Event*/evt){
+      var itemEl = evt.item;  // dragged HTMLElement
+      evt.to;    // target list
+      evt.from;  // previous list
+      evt.oldIndex;  // element's old index within old parent
+      evt.newIndex;  // element's new index within new parent
+      evt.clone; // the clone element
+      evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
+      //WORKS TO FIND PRICE FOR DRAGGED ELEMENT
+      //alert("Price for Plane moved: " + evt.clone.getElementsByTagName("span").item(0).innerHTML);
+      //WORKS TO FIND PRICING OF FIRST ELEMENT
+      //alert("Plane price in first position: " + evt.to.getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML);
+      var temp = 0;
+      temp = parseFloat(document.getElementById("planes").getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML) + parseFloat(document.getElementById("cars").getElementsByTagName("div").item(0).getElementsByTagName("span").item(0).innerHTML);
+      document.getElementById('Total').innerHTML = temp;
+      }}
+      );
+
+    </script>
+  </body>
+</html>
