@@ -10,45 +10,45 @@
   </head>
   <body>
 
-    <p>
-      <div id="cars" title="cars" class="list-group">
-        <div style="background-color:#FFDB58" class="list-group-item">
-          <h3><i class="material-icons">time_to_leave</i>Hertz</h3>
-          <p>From xx to yy. Date AA to BB.</p>
-	  <p>Price: <span class="badge">123</span></p>
-        </div>
-        <div style="background-color:#FF0000" class="list-group-item">
-          <h3><i class="material-icons">time_to_leave</i>Avis</h3>
-          <p>From xx to yy. Date AA to BB.</p>
-	  <p>Price: <span class="badge">456</span></p>
-        </div>
-	<div style="background-color:#FFFF00" class="list-group-item">
-          <h3><i class="material-icons">time_to_leave</i>Avis</h3>
-          <p>From xx to yy. Date AA to BB.</p>
-          <p>Price: <span class="badge">789</span></p>
-        </div>
-      </div>
-    </p>
-
-    <p>
-      <div id="planes" title="planes" class="list-group">
-	<div style="background-color:#82CAFF" class="list-group-item">
-	  <h3><i class="material-icons">airplanemode_active</i>Air France</h3>
-	  <p>From xx to yy. Date AA to BB.</p>
-	  <p>Price: <span class="badge">987</span></p>
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+	<div id="cars" title="cars" class="mdc-layout-grid__cell">
+          <div style="background-color:#FFDB58" class="list-group-item">
+            <h3><i class="material-icons">time_to_leave</i>Hertz</h3>
+            <p>From xx to yy. Date AA to BB.</p>
+	    <p>Price: <span class="badge">123</span></p>
+          </div>
+          <div style="background-color:#FF0000" class="list-group-item">
+            <h3><i class="material-icons">time_to_leave</i>Avis</h3>
+            <p>From xx to yy. Date AA to BB.</p>
+	    <p>Price: <span class="badge">456</span></p>
+          </div>
+	  <div style="background-color:#FFFF00" class="list-group-item">
+            <h3><i class="material-icons">time_to_leave</i>Avis</h3>
+            <p>From xx to yy. Date AA to BB.</p>
+            <p>Price: <span class="badge">789</span></p>
+          </div>
 	</div>
-	<div style="background-color:#FBF6D9" class="list-group-item">
-	  <h3><i class="material-icons">airplanemode_active</i>Emirates</h3>
-	  <p>From xxto yy. Date AA to BB.</p>
-	  <p>Price: <span class="badge">654</span></p>
+	
+	<div id="planes" title="planes" class="mdc-layout-grid__cell">
+	  <div style="background-color:#82CAFF" class="list-group-item">
+	    <h3><i class="material-icons">airplanemode_active</i>Air France</h3>
+	    <p>From xx to yy. Date AA to BB.</p>
+	    <p>Price: <span class="badge">987</span></p>
+	  </div>
+	  <div style="background-color:#FBF6D9" class="list-group-item">
+	    <h3><i class="material-icons">airplanemode_active</i>Emirates</h3>
+	    <p>From xxto yy. Date AA to BB.</p>
+	    <p>Price: <span class="badge">654</span></p>
+	  </div>
+	  <div style="background-color:#82CAFF" class="list-group-item">
+            <h3><i class="material-icons">airplanemode_active</i>Air France</h3>
+            <p>From xx to yy. Date AA to BB.</p>
+            <p>Price: <span class="badge">321</span></p>
+          </div>
 	</div>
-	<div style="background-color:#82CAFF" class="list-group-item">
-          <h3><i class="material-icons">airplanemode_active</i>Air France</h3>
-          <p>From xx to yy. Date AA to BB.</p>
-          <p>Price: <span class="badge">321</span></p>
-        </div>
       </div>
-    </p>
+    </div>
 
     <p><i class="material-icons">attach_money</i>Updating with drag/drop items: <span id="Total" class="badge">0</span></p>
 
